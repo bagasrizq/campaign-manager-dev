@@ -29,6 +29,7 @@ spl_autoload_register(function ($class) {
 
 // Include required files
 require_once CAMPAIGN_MANAGER_PLUGIN_DIR . 'includes/class-campaign-manager.php';
+require_once plugin_dir_path(__FILE__) . 'includes/class-campaign-database.php';
 
 // Initialize plugin
 function campaign_manager_init() {

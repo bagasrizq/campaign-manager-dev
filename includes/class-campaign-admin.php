@@ -208,7 +208,7 @@ class Campaign_Manager_Admin {
                             <td><?php echo esc_html($submission->nama); ?></td>
                             <td><?php echo esc_html($submission->email); ?></td>
                             <td><?php echo esc_html($submission->no_hp); ?></td>
-                            <td>Rp <?php echo number_format($submission->amount, 0, ',', '.'); ?></td>
+                            <td>Rp <?php echo isset($submission->amount) ? number_format($submission->amount, 0, ',', '.') : '0'; ?></td>
                             <td>
                                 <?php 
                                 $campaign = get_post($submission->campaign_id);
