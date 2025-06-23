@@ -7,6 +7,8 @@
 get_header(); ?>
 
 <div class="campaign-container">
+    
+
     <?php while (have_posts()) : the_post(); ?>
         <?php
         // Get campaign meta data
@@ -61,17 +63,19 @@ get_header(); ?>
                 <?php endif; ?>
             </div>
             
-            <h1 class="campaign-title"><?php the_title(); ?></h1>
             
-            <?php if (has_post_thumbnail()): ?>
-                <div class="campaign-featured-image">
-                    <?php the_post_thumbnail('large', array('class' => 'campaign-image')); ?>
-                </div>
-            <?php endif; ?>
+            
+            
         </div>
 
         <div class="campaign-content-wrapper">
             <div class="campaign-main-content">
+                <?php if (has_post_thumbnail()): ?>
+                    <div class="campaign-featured-image">
+                        <?php the_post_thumbnail('large', array('class' => 'campaign-image')); ?>
+                    </div>
+                    <h1 class="campaign-title"><?php the_title(); ?></h1>
+                <?php endif; ?>
                 <div class="campaign-description">
                     <h2>Tentang Campaign Ini</h2>
                     <?php the_content(); ?>
@@ -258,7 +262,7 @@ get_header(); ?>
 }
 
 .campaign-featured-image {
-    margin: 20px 0;
+    margin: 0 0 20px 0;
 }
 
 .campaign-image {
